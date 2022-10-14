@@ -1,6 +1,7 @@
 import { LABEL } from "../../app/constants";
 import AppButton from "../../component/AppButton";
 import AppFormInput from "../../component/AppFormInput";
+import withContainer from "../../component/withContainer";
 
 const StudentView = props => {
     const {handleNameChange, handleSubmit, handleAddAgeClick, nameValue, student, books} = props;
@@ -25,4 +26,4 @@ const StudentView = props => {
     )
 }
 
-export default StudentView
+export default withContainer('Student', StudentView); 

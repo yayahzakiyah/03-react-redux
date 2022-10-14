@@ -8,8 +8,12 @@ import StudentBookView from './features/studentBook/StudentBookView';
 function App() {
   return (
     <>
-      <StudentPage view={StudentView}/>
-      <StudentBookPage view={StudentBookView}/>
+      <StudentPage view={props => (
+        <StudentView {...props}/>
+      )}/>
+      <StudentBookPage view={props => (
+        <StudentBookView {...props}/>
+      )}/>
     </>
   );
 }
