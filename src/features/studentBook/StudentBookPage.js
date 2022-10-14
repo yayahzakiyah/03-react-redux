@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Component } from "react";
 import { connect } from "react-redux";
+import { withDep } from "../../component/WithDep.js";
 import BookService from "../../services/BookService.js";
 import { addStudentBookAction } from "./state/StudentBookAction.js";
 
@@ -69,4 +70,4 @@ StudentBookPage.propTypes = {
     view: PropTypes.func
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentBookPage)
+export default connect(mapStateToProps, mapDispatchToProps)(withDep(StudentBookPage, ['BookService']));
