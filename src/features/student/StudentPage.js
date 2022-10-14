@@ -1,7 +1,7 @@
-import { PropTypes } from 'proptype';
-import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+import { Component } from 'react'
 import { connect } from 'react-redux';
-import {addAgeAction, changeNameAction} from './state/StudentAction'
+import {addAgeAction, changeNameAction} from './state/StudentAction.js'
 
 class StudentPage extends Component {
     constructor(props){
@@ -22,7 +22,8 @@ class StudentPage extends Component {
                 handleNameChange: this.onNameChange,
                 handleSubmit: this.onSubmit,
                 handleAddAgeClick: this.onAddAgeClick,
-                student: this.props.student
+                student: this.props.student,
+                books: this.props.studentBook.books
             })
         )
     }
@@ -34,7 +35,7 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = state => {
-    return {student: state.studentReducer};
+    return {student: state.studentReducer, studentBook: state.bookReducer};
 }
 
 StudentPage.propTypes = {

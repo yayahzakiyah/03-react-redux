@@ -3,7 +3,7 @@ import AppButton from "../../component/AppButton";
 import AppFormInput from "../../component/AppFormInput";
 
 const StudentView = props => {
-    const {handleNameChange, handleSubmit, handleAddAgeClick, nameValue, student} = props;
+    const {handleNameChange, handleSubmit, handleAddAgeClick, nameValue, student, books} = props;
     return(
         <>
             <div style={{margin:'30px'}}>
@@ -14,7 +14,13 @@ const StudentView = props => {
                     <AppButton handleClick={handleAddAgeClick} label={LABEL['AddAge.label'].value}/>
                 </div>
                 <div>{student.name} {student.age}</div>
+                <ul>
+                    {books.map(book => <li key={book}>{book}</li>)}
+                </ul>
             </div>
+            <ul>
+                {books.map(book => <li key={book}>{book}</li>)}
+            </ul>
         </>
     )
 }
