@@ -4,7 +4,7 @@ import AppFormInput from "../../component/AppFormInput";
 import withContainer from "../../component/withContainer";
 
 const StudentBookView = (props) => {
-    const {handleSubmit, student, newBookValue, handleNewBookChange, books} = props;
+    const {handleSubmit, handlePostBooks, student, newBookValue, handleNewBookChange, books} = props;
     return (
         <>
             <div style={{margin: '30px'}}>
@@ -16,6 +16,7 @@ const StudentBookView = (props) => {
                 <ul>
                     {books.map(book => <li key={book}>{book}</li>)}
                 </ul>
+                <AppButton handleClick={handlePostBooks} label={LABEL["StudentBook.post"].value}/>
             </div>
         </>
     )
